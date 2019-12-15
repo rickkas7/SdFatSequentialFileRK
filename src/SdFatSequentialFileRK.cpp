@@ -105,7 +105,7 @@ bool SdFatSequentialFile::openFile(FatFile *pFile, bool nextFile) {
 
 	for(int tries = 0; tries <= 1; tries++) {
 		const char *name = getName(lastFileNum);
-		if (pFile->open(&logsDir, name, O_RDWR | O_APPEND | O_CREAT)) {
+		if (pFile->open(&logsDir, name, O_RDWR | O_CREAT)) {
 			if (maxFilesToKeep > 0) {
 				fileNums.insert(lastFileNum);
 			}
